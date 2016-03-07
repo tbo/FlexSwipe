@@ -14,7 +14,7 @@
 }(this, function () {
 	'use strict';
 
-	return function Swipe(container, options) {
+	return function Swipe(container, inputOptions) {
 
 		"use strict";
 
@@ -40,7 +40,7 @@
 		if (!container) return;
 		var element = container.children[0];
 		var slides, slidePos, width, height, length;
-		options = options || {};
+		var options = Object.assign({}, inputOptions);
 		var index = parseInt(options.startSlide, 10) || 0;
 		var speed = options.speed || 300;
 		var dir = options.direction || 'x';
